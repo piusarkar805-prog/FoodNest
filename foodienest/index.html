@@ -1,0 +1,1529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FoodNest - Delicious Food Delivered</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="logo">
+            🍔 Food<span>Nest</span>
+        </div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#menu">Menu</a>
+            <a href="#offers">Offers</a>
+            <a href="#about">About</a>
+        </nav>
+
+        <div class="nav-actions">
+            <button class="search-btn">🔍</button>
+            <button class="wishlist-btn">♡</button>
+            <button class="cart-btn">
+                🛒 <span id="cart-count">0</span>
+            </button>
+        </div>
+    </header>
+
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <p class="small-title">🍴 Delicious food, delivered fast</p>
+
+            <h1>
+                Your Favorite Food,
+                <span>Delivered Fresh.</span>
+            </h1>
+
+            <p class="hero-text">
+                Order delicious meals from your favorite restaurants
+                and enjoy them at your doorstep.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#menu" class="primary-btn">Order Now 🍕</a>
+                <a href="#menu" class="secondary-btn">Explore Menu</a>
+            </div>
+
+        </div>
+
+        <div class="hero-image">
+            <div class="food-circle">
+                🍕
+            </div>
+        </div>
+
+    </section>
+
+
+    <!-- CATEGORIES -->
+    <section class="categories">
+
+        <div class="section-heading">
+            <p>WHAT ARE YOU CRAVING?</p>
+            <h2>Explore Categories</h2>
+        </div>
+
+        <div class="category-container">
+
+            <div class="category-card">
+                <div class="category-icon">🍕</div>
+                <h3>Pizza</h3>
+                <p>20+ Items</p>
+            </div>
+
+            <div class="category-card">
+                <div class="category-icon">🍔</div>
+                <h3>Burger</h3>
+                <p>15+ Items</p>
+            </div>
+
+            <div class="category-card">
+                <div class="category-icon">🍗</div>
+                <h3>Biryani</h3>
+                <p>18+ Items</p>
+            </div>
+
+            <div class="category-card">
+                <div class="category-icon">🍜</div>
+                <h3>Chinese</h3>
+                <p>25+ Items</p>
+            </div>
+
+            <div class="category-card">
+                <div class="category-icon">🍰</div>
+                <h3>Desserts</h3>
+                <p>12+ Items</p>
+            </div>
+
+            <div class="category-card">
+                <div class="category-icon">🥤</div>
+                <h3>Drinks</h3>
+                <p>10+ Items</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- POPULAR FOOD -->
+    <section class="menu-section" id="menu">
+
+        <div class="section-heading">
+            <p>OUR SPECIAL MENU</p>
+            <h2>Popular Dishes</h2>
+        </div>
+
+        <div class="food-container">
+
+            <div class="food-card">
+
+                <div class="food-image">
+                    🍕
+                </div>
+
+                <div class="food-info">
+                    <h3>Cheese Pizza</h3>
+                    <p>Loaded with delicious cheese</p>
+
+                    <div class="food-bottom">
+                        <strong>₹249</strong>
+                        <button onclick="addToCart('Cheese Pizza', 249)">
+                            + Add
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="food-card">
+
+                <div class="food-image">
+                    🍔
+                </div>
+
+                <div class="food-info">
+                    <h3>Classic Burger</h3>
+                    <p>Juicy burger with fresh veggies</p>
+
+                    <div class="food-bottom">
+                        <strong>₹179</strong>
+                        <button onclick="addToCart('Classic Burger', 179)">
+                            + Add
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="food-card">
+
+                <div class="food-image">
+                    🍗
+                </div>
+
+                <div class="food-info">
+                    <h3>Chicken Biryani</h3>
+                    <p>Aromatic rice with spicy chicken</p>
+
+                    <div class="food-bottom">
+                        <strong>₹229</strong>
+                        <button onclick="addToCart('Chicken Biryani', 229)">
+                            + Add
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="food-card">
+
+                <div class="food-image">
+                    🍜
+                </div>
+
+                <div class="food-info">
+                    <h3>Hakka Noodles</h3>
+                    <p>Fresh vegetables & tasty noodles</p>
+
+                    <div class="food-bottom">
+                        <strong>₹159</strong>
+                        <button onclick="addToCart('Hakka Noodles', 159)">
+                            + Add
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- OFFER -->
+    <section class="offer-section" id="offers">
+
+        <div>
+            <p class="offer-small">LIMITED TIME OFFER 🎉</p>
+
+            <h2>Get 30% OFF<br>on your first order!</h2>
+
+            <p>Use code: <strong>FOOD30</strong></p>
+
+            <button class="primary-btn">Order Now</button>
+        </div>
+
+        <div class="offer-emoji">
+            🍔
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+    <section class="about-section" id="about">
+
+        <div class="about-content">
+
+            <p>WHY FOODNEST?</p>
+
+            <h2>Good Food. Great Mood. ❤️</h2>
+
+            <p>
+                FoodNest makes ordering your favorite food simple,
+                fast and enjoyable. Explore delicious dishes,
+                add them to your cart and place your order easily.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <div class="logo">
+            🍔 Food<span>Nest</span>
+        </div>
+
+        <p>© 2026 FoodNest. Delicious food, happy moments.</p>
+
+    </footer>
+    <!-- CART MODAL -->
+
+<div class="cart-overlay" id="cart-overlay">
+
+    <div class="cart-box">
+
+        <div class="cart-header">
+            <h2>🛒 Your Cart</h2>
+            <button id="close-cart">×</button>
+        </div>
+
+        <div id="cart-items">
+            <!-- Cart items will appear here -->
+        </div>
+
+        <div class="cart-empty" id="cart-empty">
+            <div>🛒</div>
+            <h3>Your cart is empty</h3>
+            <p>Add some delicious food to continue.</p>
+        </div>
+
+        <div class="cart-footer">
+
+            <div class="total-row">
+                <span>Total</span>
+                <strong id="cart-total">₹0</strong>
+            </div>
+
+            <button class="checkout-btn" id="checkout-btn">
+                Proceed to Checkout →
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+<!-- CHECKOUT MODAL -->
+
+<div class="checkout-overlay" id="checkout-overlay">
+
+    <div class="checkout-box">
+
+        <div class="checkout-header">
+            <h2>🍽️ Checkout</h2>
+            <button id="close-checkout">×</button>
+        </div>
+
+        <div class="checkout-content">
+
+            <div class="customer-details">
+
+                <h3>Delivery Details</h3>
+
+                <label>Full Name</label>
+                <input type="text" id="customer-name" placeholder="Enter your name">
+
+                <label>Phone Number</label>
+                <input type="tel" id="customer-phone" placeholder="Enter phone number">
+
+                <label>Delivery Address</label>
+                <textarea id="customer-address" placeholder="Enter your complete address"></textarea>
+
+                <label>Payment Method</label>
+
+                <select id="payment-method">
+                    <option value="cod">Cash on Delivery</option>
+                    <option value="upi">UPI</option>
+                    <option value="card">Card</option>
+                </select>
+
+            </div>
+
+
+            <div class="order-summary">
+
+                <h3>Order Summary</h3>
+
+                <div id="checkout-items"></div>
+
+                <div class="checkout-total">
+                    <span>Total Amount</span>
+                    <strong id="checkout-total-price">₹0</strong>
+                </div>
+
+                <button id="place-order">
+                    Place Order 🎉
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ORDER SUCCESS -->
+
+<div class="success-overlay" id="success-overlay">
+
+    <div class="success-box">
+
+        <div class="success-icon">✓</div>
+
+        <h2>Order Placed Successfully!</h2>
+
+        <p>
+            Thank you for ordering with FoodNest.
+            Your delicious food is on its way! 🍕
+        </p>
+
+        <button id="continue-shopping">
+            Continue Shopping
+        </button>
+
+    </div>
+
+</div>
+<!-- FOOD SEARCH & FILTER -->
+
+<div id="food-tools">
+
+    <input
+        type="text"
+        id="food-search"
+        placeholder="🔍 Search your favorite food..."
+    >
+
+    <div id="food-filters">
+
+        <button onclick="filterFood('all')">
+            All
+        </button>
+
+        <button onclick="filterFood('pizza')">
+            🍕 Pizza
+        </button>
+
+        <button onclick="filterFood('burger')">
+            🍔 Burger
+        </button>
+
+        <button onclick="filterFood('biryani')">
+            🍗 Biryani
+        </button>
+
+        <button onclick="filterFood('noodles')">
+            🍜 Chinese
+        </button>
+
+        <button onclick="filterFood('dessert')">
+            🍰 Dessert
+        </button>
+
+    </div>
+
+</div>
+
+
+<script>
+
+const foodSearch = document.getElementById("food-search");
+
+foodSearch.addEventListener("input", function () {
+
+    const searchValue = this.value.toLowerCase();
+
+    const foodCards = document.querySelectorAll(".food-card");
+
+    foodCards.forEach(card => {
+
+        const foodName =
+            card.querySelector("h3").textContent.toLowerCase();
+
+        if (foodName.includes(searchValue)) {
+
+            card.style.display = "";
+
+        } else {
+
+            card.style.display = "none";
+
+        }
+
+    });
+
+});
+
+
+function filterFood(category) {
+
+    const foodCards = document.querySelectorAll(".food-card");
+
+    foodCards.forEach(card => {
+
+        const foodName =
+            card.querySelector("h3").textContent.toLowerCase();
+
+        if (category === "all") {
+
+            card.style.display = "";
+
+        }
+
+        else if (category === "pizza" && foodName.includes("pizza")) {
+
+            card.style.display = "";
+
+        }
+
+        else if (category === "burger" && foodName.includes("burger")) {
+
+            card.style.display = "";
+
+        }
+
+        else if (category === "biryani" && foodName.includes("biryani")) {
+
+            card.style.display = "";
+
+        }
+
+        else if (
+            category === "noodles" &&
+            (
+                foodName.includes("noodles") ||
+                foodName.includes("momo")
+            )
+        ) {
+
+            card.style.display = "";
+
+        }
+
+        else if (
+            category === "dessert" &&
+            foodName.includes("dessert")
+        ) {
+
+            card.style.display = "";
+
+        }
+
+        else {
+
+            card.style.display = "none";
+
+        }
+
+    });
+
+}
+
+</script>
+<!-- WISHLIST PANEL -->
+
+<div id="wishlist-panel">
+
+    <div class="wishlist-box">
+
+        <div class="wishlist-header">
+            <h2>❤️ My Wishlist</h2>
+            <button onclick="closeWishlist()">×</button>
+        </div>
+
+        <div id="wishlist-items">
+            <p class="empty-wishlist">
+                Your wishlist is empty ❤️
+            </p>
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+
+let wishlist = [];
+
+function addWishlist(name, price) {
+
+    const exists = wishlist.find(item => item.name === name);
+
+    if (exists) {
+
+        showMessage("Already in wishlist ❤️");
+        return;
+
+    }
+
+    wishlist.push({
+        name: name,
+        price: price
+    });
+
+    showMessage(`${name} added to wishlist ❤️`);
+
+    renderWishlist();
+}
+
+
+function renderWishlist() {
+
+    const container = document.getElementById("wishlist-items");
+
+    if (wishlist.length === 0) {
+
+        container.innerHTML = `
+            <p class="empty-wishlist">
+                Your wishlist is empty ❤️
+            </p>
+        `;
+
+        return;
+    }
+
+    container.innerHTML = "";
+
+    wishlist.forEach((item, index) => {
+
+        const div = document.createElement("div");
+
+        div.className = "wishlist-item";
+
+        div.innerHTML = `
+            <div>
+                <h4>${item.name}</h4>
+                <p>₹${item.price}</p>
+            </div>
+
+            <button onclick="removeWishlist(${index})">
+                Remove
+            </button>
+        `;
+
+        container.appendChild(div);
+
+    });
+
+}
+
+
+function removeWishlist(index) {
+
+    wishlist.splice(index, 1);
+
+    renderWishlist();
+
+    showMessage("Removed from wishlist");
+
+}
+
+
+function openWishlist() {
+
+    renderWishlist();
+
+    document
+        .getElementById("wishlist-panel")
+        .classList.add("active");
+
+}
+
+
+function closeWishlist() {
+
+    document
+        .getElementById("wishlist-panel")
+        .classList.remove("active");
+
+}
+
+
+document
+    .querySelector(".wishlist-btn")
+    .onclick = openWishlist;
+
+</script>
+<!-- WISHLIST HEART BUTTONS -->
+
+<script>
+
+document.querySelectorAll(".food-card").forEach(function(card) {
+
+    const foodName = card.querySelector("h3").textContent;
+
+    const priceText = card
+        .querySelector(".food-bottom strong")
+        .textContent
+        .replace("₹", "");
+
+    const price = Number(priceText);
+
+    const heartButton = document.createElement("button");
+
+    heartButton.className = "food-heart";
+    heartButton.innerHTML = "♡";
+    heartButton.title = "Add to Wishlist";
+
+    heartButton.onclick = function(event) {
+
+        event.stopPropagation();
+
+        addWishlist(foodName, price);
+
+        heartButton.innerHTML = "♥";
+        heartButton.classList.add("liked");
+
+    };
+
+    card.style.position = "relative";
+
+    card.appendChild(heartButton);
+
+});
+
+</script>
+<script>
+document.querySelectorAll(".food-card").forEach(function(card) {
+
+    if (card.querySelector(".food-extra")) return;
+
+    const foodName = card.querySelector("h3").textContent.toLowerCase();
+
+    let rating = "4.5";
+    let time = "25-30 min";
+    let type = "🍃 Veg";
+    let popular = false;
+
+    if (foodName.includes("pizza")) {
+        rating = "4.8";
+        time = "20-25 min";
+        popular = true;
+    } 
+    else if (foodName.includes("burger")) {
+        rating = "4.7";
+        time = "20-25 min";
+        popular = true;
+    }
+    else if (foodName.includes("biryani")) {
+        rating = "4.9";
+        time = "30-35 min";
+        type = "🍗 Non-Veg";
+        popular = true;
+    }
+    else if (foodName.includes("momo")) {
+        rating = "4.6";
+        time = "25-30 min";
+        type = "🍗 Non-Veg";
+    }
+    else if (foodName.includes("noodles")) {
+        rating = "4.5";
+        time = "20-25 min";
+    }
+    else if (foodName.includes("dessert")) {
+        rating = "4.7";
+        time = "15-20 min";
+    }
+
+    const extra = document.createElement("div");
+    extra.className = "food-extra";
+
+    extra.innerHTML = `
+        <div class="food-info-line">
+            <span class="rating">⭐ ${rating}</span>
+            <span class="delivery">⏱️ ${time}</span>
+        </div>
+        <div class="food-badges">
+            <span class="food-type">${type}</span>
+            ${popular ? '<span class="popular-badge">🔥 Popular</span>' : ''}
+        </div>
+    `;
+
+    const bottom = card.querySelector(".food-bottom");
+
+    if (bottom) {
+        bottom.before(extra);
+    }
+});
+</script>
+<section id="restaurants" class="restaurant-section">
+
+    <div class="section-title">
+        <span>🍽️ Explore</span>
+        <h2>Popular Restaurants</h2>
+        <p>Discover the best restaurants near you</p>
+    </div>
+
+    <div class="restaurant-grid">
+
+        <div class="restaurant-card">
+            <div class="restaurant-image">
+                <img src="images/pizza.jpg" alt="Pizza Palace">
+                <span>20% OFF</span>
+            </div>
+            <div class="restaurant-content">
+                <h3>Pizza Palace</h3>
+                <p>🍕 Pizza • Italian • Fast Food</p>
+                <div class="restaurant-info">
+                    <span>⭐ 4.8</span>
+                    <span>⏱️ 25 min</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="restaurant-card">
+            <div class="restaurant-image">
+                <img src="images/biryani.jpg" alt="Biryani House">
+                <span>25% OFF</span>
+            </div>
+            <div class="restaurant-content">
+                <h3>Biryani House</h3>
+                <p>🍗 Biryani • Indian • Mughlai</p>
+                <div class="restaurant-info">
+                    <span>⭐ 4.9</span>
+                    <span>⏱️ 30 min</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="restaurant-card">
+            <div class="restaurant-image">
+                <img src="images/burger.jpg" alt="Burger Hub">
+                <span>15% OFF</span>
+            </div>
+            <div class="restaurant-content">
+                <h3>Burger Hub</h3>
+                <p>🍔 Burgers • Fast Food • Snacks</p>
+                <div class="restaurant-info">
+                    <span>⭐ 4.7</span>
+                    <span>⏱️ 20 min</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="restaurant-card">
+            <div class="restaurant-image">
+                <img src="images/noodles.jpg" alt="Wok Express">
+                <span>30% OFF</span>
+            </div>
+            <div class="restaurant-content">
+                <h3>Wok Express</h3>
+                <p>🍜 Chinese • Noodles • Asian</p>
+                <div class="restaurant-info">
+                    <span>⭐ 4.6</span>
+                    <span>⏱️ 25 min</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <section class="coupon-section">
+
+    <div class="coupon-title">
+        <span>🎁 Special Offers</span>
+        <h2>Grab Your Favorite Deals</h2>
+        <p>Save more on every delicious order</p>
+    </div>
+
+    <div class="coupon-grid">
+
+        <div class="coupon-card">
+            <div class="coupon-icon">🍕</div>
+            <div>
+                <h3>30% OFF</h3>
+                <p>On your first order</p>
+                <strong>FOOD30</strong>
+            </div>
+            <button onclick="applyCoupon('FOOD30')">Apply</button>
+        </div>
+
+        <div class="coupon-card">
+            <div class="coupon-icon">🔥</div>
+            <div>
+                <h3>₹100 OFF</h3>
+                <p>On orders above ₹499</p>
+                <strong>SAVE100</strong>
+            </div>
+            <button onclick="applyCoupon('SAVE100')">Apply</button>
+        </div>
+
+        <div class="coupon-card">
+            <div class="coupon-icon">💛</div>
+            <div>
+                <h3>20% OFF</h3>
+                <p>On selected restaurants</p>
+                <strong>WELCOME20</strong>
+            </div>
+            <button onclick="applyCoupon('WELCOME20')">Apply</button>
+        </div>
+
+    </div>
+
+    <div id="coupon-message"></div>
+
+</section>
+
+<script>
+let selectedCoupon = "";
+
+function applyCoupon(code) {
+
+    selectedCoupon = code;
+
+    const message = document.getElementById("coupon-message");
+
+    if (code === "FOOD30") {
+        message.innerHTML = "🎉 FOOD30 applied — 30% OFF on your first order!";
+    }
+
+    if (code === "SAVE100") {
+        message.innerHTML = "🎉 SAVE100 applied — ₹100 OFF on orders above ₹499!";
+    }
+
+    if (code === "WELCOME20") {
+        message.innerHTML = "🎉 WELCOME20 applied — 20% OFF!";
+    }
+
+    message.classList.add("coupon-success");
+
+    showMessage("Coupon applied successfully 🎉");
+}
+</script>
+<div id="tracking-panel">
+
+    <div class="tracking-box">
+
+        <div class="tracking-header">
+            <div>
+                <span>📦 Order Tracking</span>
+                <h2>Track Your Order</h2>
+            </div>
+            <button onclick="closeTracking()">×</button>
+        </div>
+
+        <div class="tracking-order">
+            <div>
+                <small>Order ID</small>
+                <strong>#FN20260920</strong>
+            </div>
+            <div>
+                <small>Estimated Delivery</small>
+                <strong>25–35 min</strong>
+            </div>
+        </div>
+
+        <div class="tracking-progress">
+
+            <div class="track-step active">
+                <div class="track-icon">✓</div>
+                <div>
+                    <strong>Order Confirmed</strong>
+                    <p>Your order has been confirmed</p>
+                </div>
+            </div>
+
+            <div class="track-line active"></div>
+
+            <div class="track-step active">
+                <div class="track-icon">👨‍🍳</div>
+                <div>
+                    <strong>Preparing Food</strong>
+                    <p>Your food is being prepared</p>
+                </div>
+            </div>
+
+            <div class="track-line"></div>
+
+            <div class="track-step">
+                <div class="track-icon">🛵</div>
+                <div>
+                    <strong>Out for Delivery</strong>
+                    <p>Delivery partner will pick up your order</p>
+                </div>
+            </div>
+
+            <div class="track-line"></div>
+
+            <div class="track-step">
+                <div class="track-icon">🏠</div>
+                <div>
+                    <strong>Delivered</strong>
+                    <p>Your food will arrive at your doorstep</p>
+                </div>
+            </div>
+
+        </div>
+
+        <button class="close-track-btn" onclick="closeTracking()">
+            Continue Shopping
+        </button>
+
+    </div>
+</div>
+
+<script>
+function openTracking() {
+    document.getElementById("tracking-panel").classList.add("active");
+}
+
+function closeTracking() {
+    document.getElementById("tracking-panel").classList.remove("active");
+}
+</script>
+<button onclick="openTracking()" style="
+position:fixed;
+bottom:25px;
+left:25px;
+z-index:7000;
+border:none;
+background:#ff5a1f;
+color:white;
+padding:12px 18px;
+border-radius:25px;
+cursor:pointer;
+font-weight:600;">
+📦 Track Order
+</button>
+<script>
+const mobileMenuButton = document.createElement("button");
+
+mobileMenuButton.id = "mobile-menu-btn";
+mobileMenuButton.innerHTML = "☰";
+mobileMenuButton.setAttribute("aria-label", "Open menu");
+
+const navbar = document.querySelector("nav");
+
+if (navbar) {
+    navbar.appendChild(mobileMenuButton);
+}
+
+mobileMenuButton.addEventListener("click", function () {
+    const navLinks = document.querySelector(".nav-links");
+
+    if (navLinks) {
+        navLinks.classList.toggle("mobile-open");
+
+        if (navLinks.classList.contains("mobile-open")) {
+            mobileMenuButton.innerHTML = "✕";
+        } else {
+            mobileMenuButton.innerHTML = "☰";
+        }
+    }
+});
+
+document.querySelectorAll(".nav-links a").forEach(function(link) {
+    link.addEventListener("click", function() {
+        const navLinks = document.querySelector(".nav-links");
+
+        if (navLinks) {
+            navLinks.classList.remove("mobile-open");
+            mobileMenuButton.innerHTML = "☰";
+        }
+    });
+});
+</script>
+<script>
+document.querySelectorAll(".food-card img, .restaurant-card img").forEach(function(img) {
+
+    img.onerror = function() {
+        this.style.display = "none";
+
+        const parent = this.parentElement;
+
+        if (parent && !parent.querySelector(".image-error")) {
+            const message = document.createElement("div");
+            message.className = "image-error";
+            message.innerHTML = "🍽️<br>Food Image";
+            parent.appendChild(message);
+        }
+    };
+
+});
+</script>
+<script>
+document.querySelectorAll(".food-card img").forEach(function(img, index) {
+
+    const names = [
+        "pizza.jpg",
+        "burger.jpg",
+        "biryani.jpg",
+        "noodles.jpg",
+        "pasta.jpg",
+        "sandwich.jpg",
+        "momo.jpg",
+        "dessert.jpg"
+    ];
+
+    img.src = "./images/" + names[index];
+});
+</script>
+<script>
+const onlineFoodImages = [
+    "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=800&q=80",
+    "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=800&q=80",
+    "https://images.unsplash.com/photo-1563379091339-03246963d96c?auto=format&fit=crop&w=800&q=80",
+    "https://images.unsplash.com/photo-1585032226651-759b368d7246?auto=format&fit=crop&w=800&q=80",
+    "https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=800&q=80",
+    "https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=800&q=80",
+    "https://images.unsplash.com/photo-1496116218417-1a781b1c416c?auto=format&fit=crop&w=800&q=80",
+    "https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=800&q=80"
+];
+
+document.querySelectorAll(".food-card img").forEach(function(img, index) {
+    if (onlineFoodImages[index]) {
+        img.src = onlineFoodImages[index];
+    }
+});
+
+document.querySelectorAll(".restaurant-card img").forEach(function(img, index) {
+    if (onlineFoodImages[index]) {
+        img.src = onlineFoodImages[index];
+    }
+});
+</script>
+<script>
+const restaurantImages = [
+    "https://images.unsplash.com/photo-1579751626657-72bc17010498?auto=format&fit=crop&w=800&q=80",
+    "https://images.unsplash.com/photo-1563379091339-03246963d96c?auto=format&fit=crop&w=800&q=80",
+    "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=800&q=80",
+    "https://images.unsplash.com/photo-1585032226651-759b368d7246?auto=format&fit=crop&w=800&q=80"
+];
+
+document.querySelectorAll(".restaurant-card img").forEach(function(img, index) {
+    if (restaurantImages[index]) {
+        img.src = restaurantImages[index];
+    }
+});
+</script>
+<script>
+document.querySelectorAll(".food-card").forEach(function(card) {
+    const name = card.querySelector("h3");
+
+    if (name && name.textContent.toLowerCase().includes("biryani")) {
+        const img = card.querySelector("img");
+
+        if (img) {
+            img.src = "https://images.unsplash.com/photo-1563379091339-03246963d96c?auto=format&fit=crop&w=800&q=80";
+        }
+    }
+});
+
+document.querySelectorAll(".restaurant-card").forEach(function(card) {
+    const name = card.querySelector("h3");
+
+    if (name && name.textContent.toLowerCase().includes("biryani")) {
+        const img = card.querySelector("img");
+
+        if (img) {
+            img.src = "https://images.unsplash.com/photo-1563379091339-03246963d96c?auto=format&fit=crop&w=800&q=80";
+        }
+    }
+});
+</script>
+<script>
+document.querySelectorAll(".restaurant-card").forEach(function(card) {
+    const title = card.querySelector("h3");
+
+    if (title && title.textContent.includes("Biryani")) {
+        const img = card.querySelector("img");
+
+        if (img) {
+            img.src = "https://images.unsplash.com/photo-1630409346824-4f0e7b6c6f6d?auto=format&fit=crop&w=800&q=80";
+            img.style.display = "block";
+        }
+    }
+});
+</script>
+<script>
+document.querySelectorAll(".restaurant-card").forEach(function(card) {
+
+    const title = card.querySelector("h3");
+
+    if (title && title.textContent.trim() === "Biryani House") {
+
+        const img = card.querySelector("img");
+
+        if (img) {
+            img.src = "https://images.unsplash.com/photo-1631515243349-e0cb75fb8d3a?auto=format&fit=crop&w=800&q=80";
+            img.style.display = "block";
+        }
+    }
+});
+</script>
+<div id="order-history-panel">
+
+    <div class="order-history-box">
+
+        <div class="order-history-header">
+            <div>
+                <span>📋 My Orders</span>
+                <h2>Order History</h2>
+            </div>
+
+            <button onclick="closeOrderHistory()">×</button>
+        </div>
+
+        <div id="order-history-list">
+            <div class="empty-orders">
+                📦
+                <h3>No orders yet</h3>
+                <p>Your completed orders will appear here.</p>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<button id="order-history-btn" onclick="openOrderHistory()">
+    📋 My Orders
+</button>
+
+<script>
+let foodNestOrders = [];
+
+function saveFoodNestOrder() {
+
+    if (cart.length === 0) return;
+
+    const order = {
+        id: "FN" + Date.now().toString().slice(-6),
+        date: new Date().toLocaleDateString(),
+        items: cart.map(function(item) {
+            return {
+                name: item.name,
+                quantity: item.quantity,
+                price: item.price
+            };
+        }),
+        total: cart.reduce(function(sum, item) {
+            return sum + item.price * item.quantity;
+        }, 0)
+    };
+
+    foodNestOrders.unshift(order);
+    renderOrderHistory();
+}
+
+function renderOrderHistory() {
+
+    const container = document.getElementById("order-history-list");
+
+    if (foodNestOrders.length === 0) {
+        container.innerHTML = `
+            <div class="empty-orders">
+                📦
+                <h3>No orders yet</h3>
+                <p>Your completed orders will appear here.</p>
+            </div>
+        `;
+        return;
+    }
+
+    container.innerHTML = "";
+
+    foodNestOrders.forEach(function(order) {
+
+        const orderBox = document.createElement("div");
+        orderBox.className = "history-order";
+
+        let itemsHTML = "";
+
+        order.items.forEach(function(item) {
+            itemsHTML += `
+                <div class="history-item">
+                    <span>${item.name} × ${item.quantity}</span>
+                    <strong>₹${item.price * item.quantity}</strong>
+                </div>
+            `;
+        });
+
+        orderBox.innerHTML = `
+            <div class="history-order-top">
+                <div>
+                    <small>Order ID</small>
+                    <strong>#${order.id}</strong>
+                </div>
+
+                <span class="delivered-badge">✓ Delivered</span>
+            </div>
+
+            <div class="history-items">
+                ${itemsHTML}
+            </div>
+
+            <div class="history-order-bottom">
+                <span>${order.date}</span>
+                <strong>Total: ₹${order.total}</strong>
+            </div>
+        `;
+
+        container.appendChild(orderBox);
+    });
+}
+
+function openOrderHistory() {
+    renderOrderHistory();
+    document.getElementById("order-history-panel").classList.add("active");
+}
+
+function closeOrderHistory() {
+    document.getElementById("order-history-panel").classList.remove("active");
+}
+</script>
+<script>
+document.getElementById("place-order").addEventListener("click", function() {
+
+    if (cart.length === 0) return;
+
+    const order = {
+        id: "FN" + Date.now().toString().slice(-6),
+        date: new Date().toLocaleDateString(),
+        items: cart.map(function(item) {
+            return {
+                name: item.name,
+                quantity: item.quantity,
+                price: item.price
+            };
+        }),
+        total: cart.reduce(function(sum, item) {
+            return sum + item.price * item.quantity;
+        }, 0)
+    };
+
+    foodNestOrders.unshift(order);
+
+}, true);
+</script>
+<script>
+const navLinks = document.querySelector(".nav-links");
+
+if (navLinks && !document.getElementById("nav-orders-link")) {
+
+    const orderLink = document.createElement("a");
+
+    orderLink.id = "nav-orders-link";
+    orderLink.href = "#";
+    orderLink.innerHTML = "📋 My Orders";
+
+    orderLink.onclick = function(event) {
+        event.preventDefault();
+        openOrderHistory();
+    };
+
+    navLinks.appendChild(orderLink);
+}
+</script>
+<script>
+const footer = document.createElement("footer");
+
+footer.innerHTML = `
+    <div class="foodnest-footer">
+
+        <div class="footer-brand">
+            <h2>🍽️ FoodNest</h2>
+            <p>
+                Delicious food, delivered fresh to your doorstep.
+            </p>
+            <div class="footer-social">
+                <button>📘</button>
+                <button>📸</button>
+                <button>🐦</button>
+                <button>▶️</button>
+            </div>
+        </div>
+
+        <div class="footer-column">
+            <h3>Quick Links</h3>
+            <a href="#home">Home</a>
+            <a href="#menu">Menu</a>
+            <a href="#offers">Offers</a>
+            <a href="#about">About Us</a>
+        </div>
+
+        <div class="footer-column">
+            <h3>Help</h3>
+            <a href="#">Contact Us</a>
+            <a href="#">FAQs</a>
+            <a href="#">Delivery Info</a>
+            <a href="#">Privacy Policy</a>
+        </div>
+
+        <div class="footer-column">
+            <h3>Contact</h3>
+            <p>📍 West Bengal, India</p>
+            <p>📞 +91 98765 43210</p>
+            <p>✉️ support@foodnest.com</p>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2026 FoodNest. All Rights Reserved.</p>
+        <p>Made with ❤️ for food lovers</p>
+    </div>
+`;
+
+document.body.appendChild(footer);
+</script>
+<script>
+const newsletter = document.createElement("section");
+
+newsletter.className = "newsletter-section";
+
+newsletter.innerHTML = `
+    <div class="newsletter-content">
+
+        <div class="newsletter-icon">🍕</div>
+
+        <div>
+            <span>GET SPECIAL OFFERS</span>
+            <h2>Never Miss a Delicious Deal!</h2>
+            <p>Subscribe and get exclusive food offers directly in your inbox.</p>
+        </div>
+
+        <div class="newsletter-form">
+            <input
+                type="email"
+                id="newsletter-email"
+                placeholder="Enter your email address"
+            >
+            <button onclick="subscribeNewsletter()">
+                Subscribe
+            </button>
+        </div>
+
+    </div>
+</section>
+
+<script>
+function subscribeNewsletter() {
+
+    const email = document.getElementById("newsletter-email").value.trim();
+
+    if (email === "") {
+        showMessage("Please enter your email 📧");
+        return;
+    }
+
+    if (!email.includes("@") || !email.includes(".")) {
+        showMessage("Please enter a valid email ⚠️");
+        return;
+    }
+
+    showMessage("Subscribed successfully! 🎉");
+
+    document.getElementById("newsletter-email").value = "";
+}
+</script>
+`;
+
+document.body.appendChild(newsletter);
+</script>
+<script>
+document.body.insertAdjacentHTML("beforeend", `
+<section class="newsletter-section">
+    <div class="newsletter-content">
+        <div class="newsletter-icon">🍕</div>
+
+        <div class="newsletter-text">
+            <span>GET SPECIAL OFFERS</span>
+            <h2>Never Miss a Delicious Deal!</h2>
+            <p>Subscribe and get exclusive food offers directly in your inbox.</p>
+        </div>
+
+        <div class="newsletter-form">
+            <input type="email" id="newsletter-email" placeholder="Enter your email">
+            <button onclick="subscribeNewsletter()">Subscribe</button>
+        </div>
+    </div>
+</section>
+`);
+
+function subscribeNewsletter() {
+    const email = document.getElementById("newsletter-email").value.trim();
+
+    if (!email) {
+        showMessage("Please enter your email 📧");
+        return;
+    }
+
+    showMessage("Subscribed successfully! 🎉");
+    document.getElementById("newsletter-email").value = "";
+}
+</script>
+<script>
+document.documentElement.style.scrollBehavior = "smooth";
+
+const backTop = document.createElement("button");
+
+backTop.id = "back-to-top";
+backTop.innerHTML = "↑";
+backTop.title = "Back to Top";
+
+document.body.appendChild(backTop);
+
+window.addEventListener("scroll", function () {
+    if (window.scrollY > 500) {
+        backTop.classList.add("show");
+    } else {
+        backTop.classList.remove("show");
+    }
+});
+
+backTop.onclick = function () {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+};
+</script>
+<div id="food-search-section">
+    <div class="search-box">
+        <span>🔍</span>
+        <input
+            type="text"
+            id="food-search"
+            placeholder="Search for pizza, burger, biryani..."
+        >
+    </div>
+
+    <div class="search-title">
+        <span>🍽️ Explore Menu</span>
+        <h2>Find Your Favorite Food</h2>
+    </div>
+</div>
+
+<script>
+const foodSearchBox = document.getElementById("food-search");
+
+foodSearchBox.addEventListener("input", function () {
+    const searchText = this.value.toLowerCase().trim();
+
+    document.querySelectorAll(".food-card").forEach(function(card) {
+        const foodName = card.querySelector("h3");
+
+        if (foodName) {
+            const name = foodName.textContent.toLowerCase();
+
+            if (name.includes(searchText)) {
+                card.style.display = "";
+            } else {
+                card.style.display = "none";
+            }
+        }
+    });
+});
+</script>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
