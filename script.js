@@ -370,57 +370,188 @@ document.getElementById("continue-shopping").addEventListener("click", function 
     document.getElementById("customer-address").value = "";
 
 });
-#mobile-menu-btn {
-    display: none;
-    border: none;
-    background: #fff0e8;
-    color: #ff5a1f;
-    width: 42px;
-    height: 42px;
-    border-radius: 50%;
-    font-size: 21px;
-    cursor: pointer;
-    align-items: center;
-    justify-content: center;
-}
 
-@media (max-width: 700px) {
+// FINAL ADD TO CART FIX
+document.querySelectorAll(".food-card").forEach(function(card) {
 
-    #mobile-menu-btn {
-        display: flex;
+    const buttons = card.querySelectorAll("button");
+
+    buttons.forEach(function(button) {
+
+        if (button.textContent.toLowerCase().includes("cart")) {
+
+            button.onclick = function(event) {
+                event.preventDefault();
+                event.stopPropagation();
+
+                const nameElement = card.querySelector("h3");
+                const priceElement = card.querySelector(".food-bottom strong");
+
+                if (!nameElement || !priceElement) return;
+
+                const name = nameElement.textContent.trim();
+                const price = Number(
+                    priceElement.textContent.replace("₹", "").trim()
+                );
+
+                const existing = cart.find(function(item) {
+                    return item.name === name;
+                });
+
+                if (existing) {
+                    existing.quantity++;
+                } else {
+                    cart.push({
+                        name: name,
+                        price: price,
+                        quantity: 1
+                    });
+                }
+
+                updateCartCount();
+                showMessage(name + " added to cart 🛒");
+            };
+        }
+    });
+});
+// FINAL ADD BUTTON FIX
+document.querySelectorAll(".food-card").forEach(function(card) {
+
+    const buttons = card.querySelectorAll("button");
+
+    buttons.forEach(function(button) {
+
+        if (button.textContent.trim().toLowerCase() === "add") {
+
+            button.onclick = function(event) {
+                event.preventDefault();
+                event.stopPropagation();
+
+                const nameElement = card.querySelector("h3");
+                const priceElement = card.querySelector(".food-bottom strong");
+
+                if (!nameElement || !priceElement) return;
+
+                const name = nameElement.textContent.trim();
+                const price = Number(
+                    priceElement.textContent.replace("₹", "").trim()
+                );
+
+                const existingItem = cart.find(function(item) {
+                    return item.name === name;
+                });
+
+                if (existingItem) {
+                    existingItem.quantity++;
+                } else {
+                    cart.push({
+                        name: name,
+                        price: price,
+                        quantity: 1
+                    });
+                }
+
+                updateCartCount();
+                showMessage(name + " added to cart 🛒");
+            };
+        }
+    });
+});
+// FOODNEST CART FINAL FIX
+document.addEventListener("click", function(event) {
+
+    const button = event.target.closest(".food-card button");
+
+    if (!button) return;
+
+    // Heart/Wishlist button হলে বাদ
+    if (
+        button.classList.contains("food-heart") ||
+        button.textContent.includes("♡") ||
+        button.textContent.includes("♥")
+    ) {
+        return;
     }
 
-    nav {
-        position: relative;
+    const card = button.closest(".food-card");
+
+    if (!card) return;
+
+    const nameElement = card.querySelector("h3");
+    const priceElement = card.querySelector("strong");
+
+    if (!nameElement || !priceElement) return;
+
+    const name = nameElement.textContent.trim();
+
+    const price = parseInt(
+        priceElement.textContent.replace(/[^\d]/g, "")
+    );
+
+    if (!name || !price) {
+        showMessage("Food details not found ⚠️");
+        return;
     }
 
-    .nav-links {
-        position: absolute;
-        top: 65px;
-        left: 0;
-        right: 0;
-        display: none;
-        flex-direction: column;
-        align-items: stretch;
-        gap: 0;
-        background: white;
-        padding: 12px;
-        border-radius: 18px;
-        box-shadow: 0 15px 35px rgba(0,0,0,0.12);
-        z-index: 9999;
+    // Existing item check
+    const existingItem = cart.find(function(item) {
+        return item.name === name;
+    });
+
+    if (existingItem) {
+        existingItem.quantity += 1;
+    } else {
+        cart.push({
+            name: name,
+            price: price,
+            quantity: 1
+        });
     }
 
-    .nav-links.mobile-open {
-        display: flex;
+    updateCartCount();
+
+    showMessage(name + " added to cart 🛒");
+});
+// ===== FOODNEST FINAL CART SYSTEM =====
+
+window.cart = window.cart || [];
+
+window.addToCart = function(name, price) {
+
+    let existingItem = window.cart.find(function(item) {
+        return item.name === name;
+    });
+
+    if (existingItem) {
+        existingItem.quantity++;
+    } else {
+        window.cart.push({
+            name: name,
+            price: Number(price),
+            quantity: 1
+        });
     }
 
-    .nav-links a {
-        padding: 13px 15px;
-        border-radius: 12px;
+    // Cart count update
+    const cartCount = document.getElementById("cart-count");
+
+    if (cartCount) {
+        let total = 0;
+
+        window.cart.forEach(function(item) {
+            total += item.quantity;
+        });
+
+        cartCount.textContent = total;
     }
 
-    .nav-links a:hover {
-        background: #fff0e8;
-        color: #ff5a1f;
+    // Success message
+    if (typeof showMessage === "function") {
+        showMessage(name + " added to cart 🛒");
+    } else {
+        alert(name + " added to cart 🛒");
     }
-}
+
+    console.log("FoodNest Cart:", window.cart);
+};
+cart = window.cart;
